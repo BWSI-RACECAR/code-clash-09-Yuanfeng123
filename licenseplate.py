@@ -35,20 +35,18 @@ class Solution:
         numPart = str[3:]
         c1 = alphabetPart.count(".")
         c2 = numPart.count(".")
-        t1 = 1
-        c1 = 10 - c1
-        c2 = 26 - c2
 
-        for i in range(c1):
-            t1 *= 26-i
+        t = 1
+        if c1==1:
+            t *= 24
+        elif c2==2:
+            t *= 24 * 25
+        elif c2==3:
+            t *= 24 * 25 * 26
 
-        t2 = 1
-
-        for i in range(c2):
-            t2 *= 10 - i
-
-        return t1*t2
-
+        for i in range(7, 7+c2):
+            t *= i
+        return t
 
         # if "." in alphabetPart: 
         #     c1 = alphabetPart.count(".")

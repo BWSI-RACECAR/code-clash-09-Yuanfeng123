@@ -39,9 +39,9 @@ class Solution:
         t = 1
         if c1==1:
             t *= 24
-        elif c2==2:
+        elif c1==2:
             t *= 24 * 25
-        elif c2==3:
+        elif c1==3:
             t *= 24 * 25 * 26
 
         for i in range(7, 7+c2):

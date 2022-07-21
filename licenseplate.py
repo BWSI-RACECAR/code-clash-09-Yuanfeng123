@@ -36,15 +36,17 @@ class Solution:
         c1 = alphabetPart.count(".")
         c2 = numPart.count(".")
         t1 = 1
-        t = 0
+        c1 = 10 - c1
+        c2 = 26 - c2
+
         for i in range(c1):
-            t1 *= 26-t
-            t+=1
+            t1 *= 26-i
+
         t2 = 1
-        t = 0
+
         for i in range(c2):
-            t2 *= 10 - t
-            t += 1
+            t2 *= 10 - i
+
         return t1*t2
 
 

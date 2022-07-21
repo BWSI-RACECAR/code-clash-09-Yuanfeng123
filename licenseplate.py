@@ -37,12 +37,9 @@ class Solution:
         c2 = numPart.count(".")
 
         t = 1
-        if c1==1:
-            t *= 24
-        elif c1==2:
-            t *= 24 * 25
-        elif c1==3:
-            t *= 24 * 25 * 26
+
+        for i in range(24, 24 + c1):
+            t *= i
 
         for i in range(7, 7+c2):
             t *= i

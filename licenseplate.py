@@ -30,7 +30,20 @@ class Solution:
         # TODO: Write code below to return an int with the solution to the prompt
         alphabetPart = str[0:3]
         numPart = str[3:]
-        return (26 - (len(alphabetPart) - alphabetPart.count("."))) * (10 - (len(numPart) - numPart.count(".")))
+        if "." in alphabetPart: 
+            c1 = alphabetPart.count(".")
+            if "." in numPart:
+                c2 = numPart.count(".")
+                return (26 - (len(alphabetPart) - c1)) * (10 - (len(numPart) - c2))
+            else:
+                return 26 - (len(alphabetPart) - c1)
+        elif "." in numPart:
+            c1 = numPart.count(".")
+            if "." in alphabetPart:
+                c2 = alphabetPart.count(".")
+                return (26 - (len(alphabetPart) - c1)) * (10 - (len(numPart) - c2))
+            else:
+                return 10 - (len(numPart) - c1)
 
 def main():
     string1 = input()
